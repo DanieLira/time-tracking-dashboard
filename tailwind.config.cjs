@@ -7,7 +7,7 @@ module.exports = {
     colors:{
       'primaryBlue': "#5847eb",
       'softBlue': "#56c2e6",
-      'lightRed': "#ff5c7c",
+      'red': "#ff5c7c",
       'limeGreen': "#4acf81",
       'violet': "#7536d3",
       'softOrange': "#f1c65b", 
@@ -16,6 +16,7 @@ module.exports = {
       'desaturatedBlue': "#6f76c8",
       'paleBlue': "#bdc1ff",
       'lightRed': "#ff8c66",
+      'yellow':"#fff080",
       'white':"#ffffff"
     },
     extend: {},

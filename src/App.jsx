@@ -4,13 +4,22 @@ import TimerContainer from './components/TimerContainer'
 import data from '../data.json'
 
 export default function App() {
-  
-  const timerElements = data.map(timer => <TimerContainer data={timer}/> )
+
+  const timerElements = data.map(timer => <TimerContainer data={timer} />)
 
   return (
     <div className="font-['Rubik']">
-      <UserContainer />
-      {timerElements}
+      <div className='flex'>
+        <UserContainer />
+        <div>
+          <div className='flex'>
+            {timerElements.slice(0, 3)}
+          </div>
+          <div className='flex'>
+            {timerElements.slice(3, 6)}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
