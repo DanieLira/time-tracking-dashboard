@@ -5,12 +5,18 @@ import data from '../data.json'
 
 export default function App() {
 
-  const timerElements = data.map(timer => <TimerContainer data={timer} />)
+  const [timeChecked, setTimeChecked] = React.useState("daily")
+
+  function changePeriod(timeChecked){
+    setTimeChecked(timeChecked)
+  }
+
+  const timerElements = data.map(timer => <TimerContainer data={timer} timeChecked={timeChecked}/>)
 
   return (
-    <div className="font-['Rubik']">
+    <div className="font-['Rubik'] flex items-center justify-center h-screen">
       <div className='flex'>
-        <UserContainer />
+        <UserContainer changePeriod={changePeriod}/>
         <div>
           <div className='flex'>
             {timerElements.slice(0, 3)}

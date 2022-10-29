@@ -1,7 +1,7 @@
 import React from "react"
 import userImage from "../images/image-jeremy.png"
 
-export default function UserContainer() {
+export default function UserContainer(props) {
     return (
         <div className="bg-darkBlue w-80 h-[36rem] rounded-3xl mt-6">
             <div className="bg-primaryBlue w-80 h-[24rem] rounded-3xl">
@@ -16,9 +16,9 @@ export default function UserContainer() {
                 </div>
             </div>
             <ul className="m-10 cursor-pointer">
-                <li className="text-white pb-3">Daily</li>
-                <li className="text-white pb-3">Weekly</li>
-                <li className="text-white pb-3">Monthly</li>
+                <li className="text-white pb-3" onClick={() => props.changePeriod("daily")}>Daily</li>
+                <li className="text-white pb-3" onClick={() => props.changePeriod("weekly")}>Weekly</li>
+                <li className="text-white pb-3" onClick={() => props.changePeriod("monthly")}>Monthly</li>
             </ul>
         </div>
     )

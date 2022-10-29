@@ -8,6 +8,14 @@ import IconSelfCare from '../images/icon-self-care.svg';
 
 export default function UserContainer(props) {
     
+    
+    
+    const timeBeing = {
+        "daily":"Today",
+        "weekly":"Last Week",
+        "monthly": "Last Month"
+    }
+
     const timerType = {
         "Work":{
             icon: IconWork, 
@@ -34,6 +42,9 @@ export default function UserContainer(props) {
             color: "bg-yellow"
         }
     }
+
+    const currentHours = props.data.timeframes[props.timeChecked].current
+    const previousHours = props.data.timeframes[props.timeChecked].previous
     
     const timerContainerClass = `${timerType[props.data.title].color} w-80 h-[17rem] rounded-3xl relative mt-6 ml-6 mr-6 mb-2`
 
@@ -44,12 +55,12 @@ export default function UserContainer(props) {
             />
             <div className="bg-darkBlue absolute bottom-0 w-full rounded-2xl h-[13rem]">
                 <div className="text-white p-7">
-                    <div className="flex justify-between">
-                        <p>{props.data.title}</p>
-                        <p>...</p>
+                    <div className="flex justify-between items-center">
+                        <p className="text-xl">{props.data.title}</p>
+                        <p className="text-xl">...</p>
                     </div>
-                    <h3>{props.data.timeframes.daily.current}hrs</h3>
-                    <p>[the time being] - {props.data.timeframes.daily.previous}</p>
+                    <h3 className="text-6xl mt-8">{currentHours}hrs</h3>
+                    <p className="mt-3 font-thin text-white">{timeBeing[props.timeChecked] || "Today"} - {previousHours}hrs</p>
                 </div>
             </div>
         </div>
