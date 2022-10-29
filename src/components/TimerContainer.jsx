@@ -11,7 +11,7 @@ export default function UserContainer(props) {
     
     
     const timeBeing = {
-        "daily":"Today",
+        "daily":"Yesterday",
         "weekly":"Last Week",
         "monthly": "Last Month"
     }
@@ -43,8 +43,8 @@ export default function UserContainer(props) {
         }
     }
 
-    const currentHours = props.data.timeframes[props.timeChecked].current
-    const previousHours = props.data.timeframes[props.timeChecked].previous
+    const currentHours = props.data.timeframes[props.timeFrame].current
+    const previousHours = props.data.timeframes[props.timeFrame].previous
     
     const timerContainerClass = `${timerType[props.data.title].color} w-80 h-[17rem] rounded-3xl relative mt-6 ml-6 mr-6 mb-2`
 
@@ -53,14 +53,14 @@ export default function UserContainer(props) {
             <img src={timerType[props.data.title].icon}
                 className="absolute right-5"
             />
-            <div className="bg-darkBlue absolute bottom-0 w-full rounded-2xl h-[13rem]">
+            <div className="bg-darkBlue absolute bottom-0 w-full rounded-2xl h-[13rem] hover:bg-desaturatedBlue">
                 <div className="text-white p-7">
                     <div className="flex justify-between items-center">
                         <p className="text-xl">{props.data.title}</p>
-                        <p className="text-xl">...</p>
+                        <p className="text-xl cursor-pointer">...</p>
                     </div>
                     <h3 className="text-6xl mt-8">{currentHours}hrs</h3>
-                    <p className="mt-3 font-thin text-white">{timeBeing[props.timeChecked] || "Today"} - {previousHours}hrs</p>
+                    <p className="mt-3 font-thin text-white">{timeBeing[props.timeFrame] || "Today"} - {previousHours}hrs</p>
                 </div>
             </div>
         </div>

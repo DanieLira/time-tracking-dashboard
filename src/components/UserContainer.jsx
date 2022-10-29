@@ -16,9 +16,21 @@ export default function UserContainer(props) {
                 </div>
             </div>
             <ul className="m-10 cursor-pointer">
-                <li className="text-white pb-3" onClick={() => props.changePeriod("daily")}>Daily</li>
-                <li className="text-white pb-3" onClick={() => props.changePeriod("weekly")}>Weekly</li>
-                <li className="text-white pb-3" onClick={() => props.changePeriod("monthly")}>Monthly</li>
+                <li
+                    className="text-white pb-3 rounded-md flex justify-start items-center hover:bg-desaturatedBlue"
+                    onClick={() => props.changeTimeFrame("daily")}>
+                    Daily
+                </li>
+                <li
+                    className="text-white pb-3 rounded-md flex justify-start items-center hover:bg-desaturatedBlue"
+                    onClick={() => props.changeTimeFrame("weekly")}>
+                    Weekly
+                </li>
+                <li
+                    className="text-white pb-3 rounded-md flex justify-start items-center hover:bg-desaturatedBlue"
+                    onClick={() => props.changeTimeFrame("monthly")}>
+                    Monthly
+                </li>
             </ul>
         </div>
     )
